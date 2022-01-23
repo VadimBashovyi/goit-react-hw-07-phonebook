@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid'
-import { addContact } from '../../redux/phonebook/slice-items'
+import { addContacts } from '../../utilits/Api'
+import { getContacts} from "../../redux/phonebook/redux-selector"
 
 
 import styles from "./Phonebook.module.css";
@@ -9,7 +10,7 @@ import styles from "./Phonebook.module.css";
 export default function Phonebook() {
   const [name, setName] = useState('')
   const [number, setNumber] = useState('')
-  const contacts = useSelector(state => state.contacts.items)
+  const contacts = useSelector(getContacts)
   const dispatch = useDispatch()
 
   const valueSubmit = (e) => {
@@ -23,7 +24,7 @@ export default function Phonebook() {
       alert(`${name} is already in contacts`)
       return
     }
-    dispatch(addContact(contactsNew));
+    dispatch(addContacts(contactsNew));
     reset(e);
   };
 

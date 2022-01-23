@@ -1,10 +1,13 @@
 import { useDispatch } from "react-redux";
 import styles from "./ContactItem.module.css";
-import { deleteContacts} from "../../redux/phonebook/slice-items"
+import { deletedContact } from "../../utilits/Api"
+import { useEffect } from "react";
+import { getAllContacts } from "../../utilits/Api"
+
+
 
 export default function ContactItem({ id, name, number }) {
   const dispatch = useDispatch()
-  
   return (
     <>
       <span className={styles.itemText}>{name}</span>
@@ -12,8 +15,8 @@ export default function ContactItem({ id, name, number }) {
       <button
         type="button"
         className={styles.button}
-        data-id={id}
-        onClick={() => dispatch(deleteContacts(id))}
+        
+        onClick={() => dispatch(deletedContact(id))}
       >
         Delete
       </button>
