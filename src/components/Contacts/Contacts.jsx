@@ -5,8 +5,6 @@ import { getFilteredContacts } from "../../redux/phonebook/redux-selector"
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getAllContacts } from "../../utilits/Api"
-import { getContacts } from "../../redux/phonebook/redux-selector"
-import { deletedContact } from "../../utilits/Api"
 
 
 
@@ -14,9 +12,7 @@ export default function Contacts() {
   const filContacts = useSelector(getFilteredContacts)
   const dispatch = useDispatch()
   useEffect(() => {
-    console.log("first");
     dispatch(getAllContacts())
-    
   }, [dispatch])
   
     return (

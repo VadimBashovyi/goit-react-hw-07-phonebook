@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useSelector, useDispatch } from 'react-redux';
 import styles from "./Filter.module.css";
 import { contactFilter} from "../../redux/phonebook/slice-filter"
@@ -23,10 +22,5 @@ export default function Filter() {
     </label>
   );
 }
-
-Filter.propTypes = {
-  filter: PropTypes.string,
-  onFilter: PropTypes.func.isRequired,
-};
 
 

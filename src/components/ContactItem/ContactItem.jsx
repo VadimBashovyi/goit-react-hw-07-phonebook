@@ -1,10 +1,6 @@
 import { useDispatch } from "react-redux";
 import styles from "./ContactItem.module.css";
 import { deletedContact } from "../../utilits/Api"
-import { useEffect } from "react";
-import { getAllContacts } from "../../utilits/Api"
-
-
 
 export default function ContactItem({ id, name, number }) {
   const dispatch = useDispatch()
